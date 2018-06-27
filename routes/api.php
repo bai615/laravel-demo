@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// 注册一个路由响应多种 HTTP 请求动作
+Route::match(['get', 'post'], 'foo_api', function () {
+    return 'This is a request from get or post';
+});
+
+// 注册一个路由来响应所有 HTTP 请求动作
+Route::any('bar_api', function () {
+    return 'This is a request from any HTTP werb';
+});

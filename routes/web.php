@@ -11,10 +11,37 @@
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['website' => 'Laravel study']);
 });
 
-Route::get('hello',function (){
+Route::get('hello', function () {
     return 'Hello, welcome to LaravelAcademy.org';
+});
+
+Route::get('/user', 'UserController@index');
+
+// 注册一个路由响应多种 HTTP 请求动作
+Route::match(['get', 'post'], 'foo_web', function () {
+    return 'This is a request from get or post';
+});
+
+// 注册一个路由来响应所有 HTTP 请求动作
+Route::any('bar_web', function () {
+    return 'This is a request from any HTTP werb';
+});
+
+Route::get('form', function () {
+    return '<form method="POST" action="/foo_web"' . csrf_field() . '<button type="submit">提交</button></form>';
+});
+
+Route::get('member/{id}', function ($id) {
+    return 'Member ' . $id;
+});
+
+Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    return $postId . '-' . $commentId;
 });
