@@ -22,7 +22,7 @@ Route::get('hello', function () {
     return 'Hello, welcome to LaravelAcademy.org';
 });
 
-Route::get('/user', 'UserController@index');
+Route::get('/user', 'UserController@index')->middleware('token');
 
 // 注册一个路由响应多种 HTTP 请求动作
 Route::match(['get', 'post'], 'foo_web', function () {
@@ -45,3 +45,11 @@ Route::get('member/{id}', function ($id) {
 Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return $postId . '-' . $commentId;
 });
+
+Route::get('/users/{user}', function (App\User $user) {
+    dd($user);
+});
+
+Route::get('post/{id}', function ($id) {
+    return 'post-' . $id;
+})->middleware('role:editor');
