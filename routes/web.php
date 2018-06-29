@@ -11,18 +11,36 @@
 |
 */
 
+use Illuminate\Http\Request;
+//use Psr\Http\Message\ServerRequestInterface;
+
+Route::get('/', function (Request $request) {
+    var_dump(storage_path('app/photo/test.jpg')); //D:\workspace\laravel\blog_5.5\storage\app/photo/test.jpg
+    var_dump($request);
+    return view('welcome', ['website' => 'Laravel study']);
+});
+
+//Route::get('/', function (ServerRequestInterface $request) {
+//    var_dump($request);
+//    return view('welcome', ['website' => 'Laravel study']);
+//});
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', function () {
-    return view('welcome', ['website' => 'Laravel study']);
-});
+
+//Route::get('/', function () {
+//    return view('welcome', ['website' => 'Laravel study']);
+//});
+
+Route::resource('posts', 'PostController');
+
 
 Route::get('hello', function () {
     return 'Hello, welcome to LaravelAcademy.org';
 });
 
-Route::get('/user', 'UserController@index')->middleware('token');
+Route::get('/user-test', 'UserTestController@index')->middleware('token');
 
 // 注册一个路由响应多种 HTTP 请求动作
 Route::match(['get', 'post'], 'foo_web', function () {
@@ -53,3 +71,29 @@ Route::get('/users/{user}', function (App\User $user) {
 Route::get('post/{id}', function ($id) {
     return 'post-' . $id;
 })->middleware('role:editor');
+
+Route::get('cookie/add', function () {
+    $minutes = 24 * 60;
+    return response('欢迎来到 Laravel 世界')->cookie('name', '内容', $minutes);
+});
+
+Route::get('cookie/get',function (Request $request){
+    $cookie = $request->cookie('name');
+    dd($cookie);
+});
+
+
+Route::post('file/upload',function (Request $request){
+    if($request->hasFile('photo') && $request->file('photo')->isValid()){
+        $photo = $request->file('photo');
+        $extension = $photo->extension();
+        $store_result = $photo->store('photo');
+//        $store_result = $photo->storeAs('photo','test.jpg');
+        $output = [
+            'extension'=>$extension,
+            'store_result' =>$store_result
+        ];
+        var_dump($output);exit;
+    }
+    exit('未获取到上传文件或者上传过程出错');
+});
