@@ -23,3 +23,7 @@ Forbidden
 
 You are not allowed to access this resource!
 @endcomponent
+
+扩展 Blade - 自定义指令</br>
+@datetime(1508888888)
+</br>

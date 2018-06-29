@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
 //        Blade::withoutDoubleEncoding();
 
         Schema::defaultStringLength(191);
+
+        Blade::directive('datetime',function ($expression){
+            return "<?php echo date('Y-m-d H:i:s', $expression); ?>";
+        });
     }
 
     /**
