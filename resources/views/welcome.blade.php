@@ -80,7 +80,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
-                    {{ $website }}
+                    {{--{{ $website }}--}}
                 </div>
 
                 <div class="links">

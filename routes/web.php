@@ -15,9 +15,13 @@ use Illuminate\Http\Request;
 //use Psr\Http\Message\ServerRequestInterface;
 
 Route::get('/', function (Request $request) {
-    var_dump(storage_path('app/photo/test.jpg')); //D:\workspace\laravel\blog_5.5\storage\app/photo/test.jpg
-    var_dump($request);
+//    var_dump(storage_path('app/photo/test.jpg')); //D:\workspace\laravel\blog_5.5\storage\app/photo/test.jpg
+//    var_dump($request);
     return view('welcome', ['website' => 'Laravel study']);
+});
+
+Route::get('child',function (){
+    return view('child');
 });
 
 //Route::get('/', function (ServerRequestInterface $request) {
@@ -82,7 +86,8 @@ Route::get('cookie/get',function (Request $request){
     dd($cookie);
 });
 
-
+Route::post('file/upload','FileController@upload');
+/*
 Route::post('file/upload',function (Request $request){
     if($request->hasFile('photo') && $request->file('photo')->isValid()){
         $photo = $request->file('photo');
@@ -97,3 +102,4 @@ Route::post('file/upload',function (Request $request){
     }
     exit('未获取到上传文件或者上传过程出错');
 });
+*/
