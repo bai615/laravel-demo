@@ -13,7 +13,41 @@ class FileController extends Controller
         if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
             $photo = $request->file('photo');
             var_dump($photo);
+            /*
+             * object(Illuminate\Http\UploadedFile)[491]
+                  private 'test' (Symfony\Component\HttpFoundation\File\UploadedFile) => boolean false
+                  private 'originalName' (Symfony\Component\HttpFoundation\File\UploadedFile) => string 'QQ截图20180308140459.png' (length=26)
+                  private 'mimeType' (Symfony\Component\HttpFoundation\File\UploadedFile) => string 'image/png' (length=9)
+                  private 'size' (Symfony\Component\HttpFoundation\File\UploadedFile) => int 139758
+                  private 'error' (Symfony\Component\HttpFoundation\File\UploadedFile) => int 0
+                  protected 'hashName' => null
+                  private 'pathName' (SplFileInfo) => string 'D:\xampp\tmp\php8B52.tmp' (length=24)
+                  private 'fileName' (SplFileInfo) => string 'php8B52.tmp' (length=11)
+             */
             $extension = $photo->extension();
+            var_dump($extension); // png
+            var_dump($photo->getExtension()); // tmp
+            var_dump($photo->getFilename()); // php8B52.tmp
+            var_dump($photo->getSize()); // 139758
+            var_dump($photo->getType()); // file
+            var_dump($photo->getBasename()); // php8B52.tmp
+            var_dump($photo->getFileInfo());
+            /*
+             * object(SplFileInfo)[498]
+                  private 'pathName' => string 'D:\xampp\tmp\php8B52.tmp' (length=24)
+                  private 'fileName' => string 'php8B52.tmp' (length=11)
+             */
+            var_dump($photo->getATime()); // 1530260044
+            var_dump($photo->getCTime()); // 1530260044
+            var_dump($photo->getClientOriginalName()); // QQ截图20180308140459.png
+            var_dump($photo->getClientOriginalExtension()); // png
+            var_dump($photo->getClientMimeType()); // image/png
+            var_dump($photo->getClientSize()); // 139758
+            var_dump($photo->clientExtension()); // png
+            var_dump($photo->hashName()); // QRg7tSl4gMM2wV5Kc3LJGunxxj2FSyqr51YxpF3c.png
+            var_dump($photo->getRealPath()); // D:\xampp\tmp\phpB362.tmp
+
+            exit;
 
             // 用于签名的公钥和私钥
             $accessKey = 'Access_Key';
