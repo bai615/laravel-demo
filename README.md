@@ -25,13 +25,13 @@ cp .env.example .env
 vim .env
 
 修改数据库配置项
-
+```
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=database name
 DB_USERNAME=user name
 DB_PASSWORD=password
-
+```
 
 4、更新数据库
 
