@@ -37,7 +37,7 @@ DB_PASSWORD=password
 
 php artisan serve
 
-5、调整 config/database.php 中数据库信息
+5、调整 config/database.php 中数据库信息 (此处可以不用修改)
 
 vim config/database.php
 
