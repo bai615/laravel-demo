@@ -16,6 +16,7 @@ class UserController extends Controller
     public function index()
     {
         //
+        /*
         $users = DB::table('users')->select('name', 'email as user_email')->get();
         var_dump($users);
 
@@ -35,6 +36,11 @@ class UserController extends Controller
         $users = DB::table('users')->get();
 //        var_dump($users);exit;
         return view('user.index', ['users' => $users]);
+        */
+
+        $users = DB::table('users')->paginate(1);
+        $users = User::where('id', '>', 1)->paginate(1);
+        return view('user.show', ['users' => $users]);
     }
 
     /**
@@ -45,6 +51,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        DB::table('users')->get();
     }
 
     /**
@@ -67,6 +74,8 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
+        $users = DB::table('users')->paginate(15);
+        return view('user.show', ['users' => $users]);
     }
 
     /**
