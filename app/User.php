@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * 获取关联到用户的手机
+     */
+    public function phone()
+    {
+        return $this->hasOne('App\Phone');
+        // return $this->hasOne('App\Phone', 'foreign_key');
+        // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
+        // return $this->hasOne('App\Phone', 'user_id', 'id');
+    }
 }
