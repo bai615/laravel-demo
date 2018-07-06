@@ -41,6 +41,8 @@ Route::resource('posts', 'PostController');
 
 Route::resource('users', 'UserController');
 
+Route::resource('products', 'ProductController');
+
 
 Route::get('hello', function () {
     return 'Hello, welcome to LaravelAcademy.org';
