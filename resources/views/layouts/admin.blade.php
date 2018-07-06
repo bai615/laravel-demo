@@ -61,7 +61,7 @@
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ url('/admincp/logout')}}" method="POST"
+                                <form id="logout-form" action="{{ url('/admin/logout')}}" method="POST"
                                       style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
