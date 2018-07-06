@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('remark',500)->comment('备注');
 //            $table->dateTime('created_at')->comment('创建时间'); // 系统默认添加此字段，类型：timestamp
 //            $table->dateTime('updated_at')->nullable()->comment('最后更新时间'); // 系统默认添加此字段，类型：timestamp
-            $table->timestamps();
+            $table->timestamps(); // 与上面两个字段冲突
         });
     }
 
