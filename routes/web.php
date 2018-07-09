@@ -120,3 +120,6 @@ Route::post('file/upload',function (Request $request){
     exit('未获取到上传文件或者上传过程出错');
 });
 */
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
