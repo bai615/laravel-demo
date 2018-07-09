@@ -86,7 +86,9 @@
                     {{--{{ $website }}--}}
                 </div>
 
-                <example-component></example-component>
+                <div id="app">
+                    <example-component></example-component>
+                </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
