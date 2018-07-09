@@ -63,6 +63,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script src="/js/app.js"></script>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -82,6 +83,8 @@
                     Laravel
                     {{--{{ $website }}--}}
                 </div>
+
+                <example-component></example-component>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
