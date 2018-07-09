@@ -63,6 +63,8 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script src="/js/manifest.js"></script>
+        <script src="/js/vendor.js"></script>
         <script src="/js/app.js"></script>
     </head>
     <body>
