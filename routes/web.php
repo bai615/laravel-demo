@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Http\Request;
+
 //use Psr\Http\Message\ServerRequestInterface;
 
 Route::get('/', function (Request $request) {
@@ -20,11 +21,16 @@ Route::get('/', function (Request $request) {
     return view('welcome', ['website' => 'Laravel study']);
 });
 
-Route::get('child',function (){
+Route::get('/welcome/{locale}', function ($locale) {
+    App::setLocale($locale);
+    echo __('messages.welcome');
+});
+
+Route::get('child', function () {
     return view('child');
 });
 
-Route::get('/user',function (){
+Route::get('/user', function () {
 //   return new \App\Http\Resources\UserResource(\App\User::find(1));
 //    return \App\Http\Resources\UserResource::collection(\App\User::all());
     return new \App\Http\Resources\UserCollection(\App\User::all());
@@ -92,12 +98,12 @@ Route::get('cookie/add', function () {
     return response('欢迎来到 Laravel 世界')->cookie('name', '内容', $minutes);
 });
 
-Route::get('cookie/get',function (Request $request){
+Route::get('cookie/get', function (Request $request) {
     $cookie = $request->cookie('name');
     dd($cookie);
 });
 
-Route::post('file/upload','FileController@upload');
+Route::post('file/upload', 'FileController@upload');
 /*
 Route::post('file/upload',function (Request $request){
     if($request->hasFile('photo') && $request->file('photo')->isValid()){
