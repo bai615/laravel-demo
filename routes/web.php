@@ -24,6 +24,13 @@ Route::get('child',function (){
     return view('child');
 });
 
+Route::get('/user',function (){
+//   return new \App\Http\Resources\UserResource(\App\User::find(1));
+//    return \App\Http\Resources\UserResource::collection(\App\User::all());
+    return new \App\Http\Resources\UserCollection(\App\User::all());
+//    return new \App\Http\Resources\UserCollection(\App\User::paginate());
+});
+
 //Route::get('/', function (ServerRequestInterface $request) {
 //    var_dump($request);
 //    return view('welcome', ['website' => 'Laravel study']);

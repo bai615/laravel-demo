@@ -37,4 +37,9 @@ class User extends Authenticatable
         // return $this->hasOne('App\Phone', 'foreign_key', 'local_key');
         // return $this->hasOne('App\Phone', 'user_id', 'id');
     }
+
+    public function isAdmin()
+    {
+        return $this->id == 1 ? true : false;
+    }
 }

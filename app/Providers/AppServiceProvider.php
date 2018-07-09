@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Resources\Json\Resource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,9 @@ class AppServiceProvider extends ServiceProvider
 
         // 注册观察者
         User::observe(UserObservers::class);
+
+        // 禁止包装最外层资源，可以调用资源基类提供的 withoutWrapping 方法
+//        Resource::withoutWrapping();
     }
 
     /**
