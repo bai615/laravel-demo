@@ -72,6 +72,8 @@
         </nav>
 
         @yield('content')
+
+        <example-component></example-component>
     </div>
 
     <!-- Scripts -->
