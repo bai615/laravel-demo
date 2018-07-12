@@ -133,3 +133,50 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('login', 'Admin\LoginController@login');
     Route::post('logout', 'Admin\LoginController@logout');
 });
+
+//Route::get('/auth/callback', function (\Illuminate\Http\Request $request){
+//    if ($request->get('code')) {
+//        return 'Login Success';
+//    } else {
+//        return 'Access Denied';
+//    }
+//});
+
+Route::get('/auth/callback', function (Request $request) {
+    $http = new GuzzleHttp\Client;
+
+    // 以下方式都能拿到 code
+//    echo $request->get('code');
+//    echo "</br>";
+//    echo $request->code;
+
+    $response = $http->post('http://demo.laravelblog.com/oauth/token', [
+        'form_params' => [
+            'grant_type' => 'authorization_code',
+            'client_id' => '3',  // your client id
+            'client_secret' => 'Suw67fagA8dF8zbKuaoipIWZqPcaqAuSP3ymAT72',   // your client secret
+            'redirect_uri' => 'http://demo.laravelblog.com/auth/callback',
+            'code' => $request->get('code'),
+        ],
+    ]);
+
+    return json_decode((string) $response->getBody(), true);
+});
+
+// 密码授权客户端
+Route::get('/auth/password', function (\Illuminate\Http\Request $request){
+    $http = new \GuzzleHttp\Client();
+
+    $response = $http->post('http://demo.laravelblog.com/oauth/token', [
+        'form_params' => [
+            'grant_type' => 'password',
+            'client_id' => '2',
+            'client_secret' => 'U3jR2EkiM3LwLKzAjeEnntJG2VaCS7W9cuuTIDay',
+            'username' => 'auth01',
+            'password' => '1234567890',
+            'scope' => '',
+        ],
+    ]);
+
+    return json_decode((string)$response->getBody(), true);
+});

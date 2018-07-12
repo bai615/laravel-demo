@@ -26,3 +26,14 @@ Route::match(['get', 'post'], 'foo_api', function () {
 Route::any('bar_api', function () {
     return 'This is a request from any HTTP werb';
 });
+
+Route::get('/redirect', function (){
+    $query = http_build_query([
+        'client_id' => '3',
+        'redirect_uri' => 'http://demo.laravelblog.com/auth/callback',
+        'response_type' => 'code',
+        'scope' => '',
+    ]);
+
+    return redirect('http://demo.laravelblog.com/oauth/authorize?' . $query);
+});
