@@ -44,7 +44,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
                 @if (auth()->guard('admin')->guest())
-                    <li><a href="{{ url('/admincp/login') }}">Login</a></li>
+                    <li><a href="{{ url('/admin/login') }}">Login</a></li>
                     {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                 @else
                     <li class="dropdown">
