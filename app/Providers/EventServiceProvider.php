@@ -8,6 +8,7 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 class EventServiceProvider extends ServiceProvider
 {
     /**
+     * 应用的事件监听器映射.
      * The event listener mappings for the application.
      *
      * @var array
@@ -15,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\Event' => [
             'App\Listeners\EventListener',
+        ],
+        'App\Events\OrderShipped' => [
+            'App\Listeners\SendShipmentNotification',
         ],
     ];
 
@@ -27,6 +31,18 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        // 手动注册基于闭包的事件
+        Event::listen('event.name', function ($foo, $bar) {
+            //
+        });
     }
+
+    /**
+     * 要注册的订阅者类.
+     *
+     * @var array
+     */
+    protected $subscribe = [
+        'App\Listeners\UserEventSubscriber',
+    ];
 }
