@@ -4,6 +4,7 @@ namespace App\Http\Controllers\JwtApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Transformers\UserTransformer;
 use App\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -41,6 +42,7 @@ class AuthController extends Controller
     public function user(Request $request)
     {
         $user = User::find(\Auth::user()->id);
+        $user = fractal($user, new UserTransformer())->toArray();
         return response([
             'status' => 'success',
             'data' => $user
