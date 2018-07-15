@@ -17,7 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-/*Route::get('articles', function () {
+/*
+Route::get('articles', function () {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
     return \App\Article::all();
@@ -38,12 +39,28 @@ Route::delete('articles/{id}', function ($id) {
     \App\Article::find($id)->delete();
 
     return 204;
-});*/
+});
+*/
+/*
 Route::get('articles', 'ArticleController@index');
-Route::get('articles/{id}','ArticleController@show');
-Route::post('articles','ArticleController@store');
-Route::put('article/{id}','ArticleController@update');
-Route::delete('articles{id}','ArticleController@delete');
+Route::get('articles/{id}', 'ArticleController@show');
+Route::post('articles', 'ArticleController@store');
+Route::put('article/{id}', 'ArticleController@update');
+Route::delete('articles{id}', 'ArticleController@delete');
+//*/
+
+Route::post('register', 'Api\RegisterController@register');
+Route::post('login', 'Api\LoginController@login');
+Route::post('logout', 'Api\LoginController@logout');
+//*
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::get('articles', 'ArticleController@index');
+    Route::get('articles/{id}', 'ArticleController@show');
+    Route::post('articles', 'ArticleController@store');
+    Route::put('article/{id}', 'ArticleController@update');
+    Route::delete('articles{id}', 'ArticleController@delete');
+});
+//*/
 
 // 注册一个路由响应多种 HTTP 请求动作
 Route::match(['get', 'post'], 'foo_api', function () {
