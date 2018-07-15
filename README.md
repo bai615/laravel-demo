@@ -63,6 +63,9 @@ vim config/database.php
 php artisan serve
 
 
+## Laravel 命令
+[命令集](command.md) 
+
 
 
 ##问题记录
