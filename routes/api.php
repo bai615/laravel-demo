@@ -49,6 +49,16 @@ Route::put('article/{id}', 'ArticleController@update');
 Route::delete('articles{id}', 'ArticleController@delete');
 //*/
 
+Route::post('auth/register', 'JwtApi\AuthController@register');
+Route::post('auth/login', 'JwtApi\AuthController@login');
+Route::group(['middleware' => 'jwt.auth'], function () {
+    Route::get('auth/user', 'JwtApi\AuthController@user');
+    Route::get('auth/logout', 'JwtApi\AuthController@logout');
+});
+Route::group(['middleware' => 'jwt.refresh'], function () {
+    Route::get('auth/refresh', 'JwtApi\AuthController@refresh');
+});
+
 Route::post('register', 'Api\RegisterController@register');
 Route::post('login', 'Api\LoginController@login');
 Route::post('logout', 'Api\LoginController@logout');

@@ -61,3 +61,26 @@ vim config/database.php
 
 6、运行项目
 php artisan serve
+
+
+
+
+##问题记录
+
+```
+php artisan jwt:generate
+```
+如果上述命令执行报错，可以通过这个链接解决:
+
+https://github.com/tymondesigns/jwt-auth/issues/1298
+
+Hi all,
+I came upon one issue when I try to run php artisan jwt:generate I get the Reflection Exception saying "[ReflectionException] Method Tymon\JWTAuth\Commands\JWTGenerateCommand::handle() does not exist"
+
+Both Facades and service providers are entered properly and they are valid.
+
+Also for people who have a struggle to make it work I can advise one solution. Go to JWTGenerateCommand.php file located in vendor/tymon/src/Commands and paste this part of code public function handle() { $this->fire(); }
+
+I know this is not an elegant solution, but it works. I hope this might help until official fix arrive.
+
+Have a nice day.

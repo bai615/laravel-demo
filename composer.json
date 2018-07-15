@@ -13,6 +13,7 @@
         "laravel/tinker": "~1.0",
         "qiniu/php-sdk": "^7.2",
         "symfony/psr-http-message-bridge": "^1.0",
+        "tymon/jwt-auth": "^0.5.12",
         "zendframework/zend-diactoros": "^1.8"
     },
     "require-dev": {
