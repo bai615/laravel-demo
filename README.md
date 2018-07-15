@@ -68,7 +68,7 @@ php artisan serve
 
 
 
-##问题记录
+## 问题记录
 
 ```
 php artisan jwt:generate
