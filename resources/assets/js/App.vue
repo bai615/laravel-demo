@@ -20,3 +20,7 @@
         </div>
     </div>
 </template>
+
+<script>
+console.log('App.vue');
+</script>

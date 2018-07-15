@@ -19,5 +19,8 @@
         "vue": "^2.5.7",
         "vue-axios": "^2.1.2",
         "vue-router": "^3.0.1"
+    },
+    "dependencies": {
+        "@websanova/vue-auth": "^2.21.14-beta"
     }
 }
