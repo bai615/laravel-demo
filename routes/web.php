@@ -21,10 +21,10 @@ Route::get('/', function (Request $request) {
     return view('welcome', ['website' => 'Laravel study']);
 });
 
-Route::get('/welcome/{locale}', function ($locale) {
-    App::setLocale($locale);
-    echo __('messages.welcome');
-});
+//Route::get('/welcome/{locale}', function ($locale) {
+//    App::setLocale($locale);
+//    echo __('messages.welcome');
+//});
 
 Route::get('child', function () {
     return view('child');

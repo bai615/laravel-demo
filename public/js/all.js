@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 61:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(62);
+module.exports = __webpack_require__(48);
 
 
 /***/ }),
 
-/***/ 62:
+/***/ 48:
 /***/ (function(module, exports) {
 
 /**
@@ -18,18 +18,18 @@ console.log('admin');
 
 /***/ })
 
-},[61]);
+},[47]);
 webpackJsonp([2],{
 
-/***/ 63:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(64);
+module.exports = __webpack_require__(50);
 
 
 /***/ }),
 
-/***/ 64:
+/***/ 50:
 /***/ (function(module, exports) {
 
 /**
@@ -39,4 +39,4 @@ console.log('dashboard');
 
 /***/ })
 
-},[63]);
+},[49]);
