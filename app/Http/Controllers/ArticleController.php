@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Http\Resources\ArticleResource;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -49,7 +50,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
-        return Article::find($id);
+//        return Article::find($id);
+        return new ArticleResource(Article::find($id));
     }
 
     /**

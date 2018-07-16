@@ -41,7 +41,7 @@ Route::delete('articles/{id}', function ($id) {
     return 204;
 });
 */
-/*
+//*
 Route::get('articles', 'ArticleController@index');
 Route::get('articles/{id}', 'ArticleController@show');
 Route::post('articles', 'ArticleController@store');
@@ -62,7 +62,7 @@ Route::group(['middleware' => 'jwt.refresh'], function () {
 Route::post('register', 'Api\RegisterController@register');
 Route::post('login', 'Api\LoginController@login');
 Route::post('logout', 'Api\LoginController@logout');
-//*
+/*
 Route::group(['middleware' => 'auth:api'], function () {
     Route::get('articles', 'ArticleController@index');
     Route::get('articles/{id}', 'ArticleController@show');
