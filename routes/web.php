@@ -15,11 +15,13 @@ use Illuminate\Http\Request;
 
 //use Psr\Http\Message\ServerRequestInterface;
 
+/*
 Route::get('/', function (Request $request) {
 //    var_dump(storage_path('app/photo/test.jpg')); //D:\workspace\laravel\blog_5.5\storage\app/photo/test.jpg
 //    var_dump($request);
     return view('welcome', ['website' => 'Laravel study']);
 });
+*/
 
 //Route::get('/welcome/{locale}', function ($locale) {
 //    App::setLocale($locale);
@@ -50,9 +52,14 @@ Route::get('/user', function () {
 //    return view('welcome', ['website' => 'Laravel study']);
 //});
 
+Route::get('/','PostController@index')->name('home');
+
 Route::resource('posts', 'PostController');
 
 Route::resource('users', 'UserController');
+
+Route::resource('permissions', 'PermissionController');
+Route::resource('roles', 'RoleController');
 
 Route::resource('products', 'ProductController');
 
@@ -122,7 +129,7 @@ Route::post('file/upload',function (Request $request){
 */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth.admin'], function () {

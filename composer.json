@@ -12,8 +12,10 @@
         "laravel/framework": "5.5.*",
         "laravel/passport": "~4.0",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "5.5.*",
         "qiniu/php-sdk": "^7.2",
         "spatie/laravel-fractal": "^5.3",
+        "spatie/laravel-permission": "^2.12",
         "symfony/psr-http-message-bridge": "^1.0",
         "tymon/jwt-auth": "^0.5.12",
         "zendframework/zend-diactoros": "^1.8"

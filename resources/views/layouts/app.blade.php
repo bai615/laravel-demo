@@ -36,7 +36,10 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        @if (!Auth::guest())
+                            <li><a href="{{ route('posts.create') }}">New Article</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -52,6 +55,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    @role('Admin') {{-- Laravel-permission blade 辅助函数 --}}
+                                    <li>
+                                        <a href="#"><i class="fa fa-btn fa-unlock"></i>Admin</a>
+                                    </li>
+                                    @endrole
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -70,6 +78,19 @@
                 </div>
             </div>
         </nav>
+
+        @if(Session::has('flash_message'))
+            <div class="container">
+                <div class="alert alert-success"><em> {!! session('flash_message') !!}</em>
+                </div>
+            </div>
+        @endif
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                @include ('errors.list') {{-- 引入错误文件 --}}
+            </div>
+        </div>
 
         @yield('content')
 

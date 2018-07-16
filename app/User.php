@@ -5,9 +5,11 @@ namespace App;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
+    use HasRoles;
     use HasApiTokens, Notifiable;
 
     /**
@@ -44,10 +46,16 @@ class User extends Authenticatable
         return $this->id == 1 ? true : false;
     }
 
-    public function generateToken(){
+    public function generateToken()
+    {
         $this->api_token = str_random(60);
         $this->save();
 
         return $this->api_token;
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
     }
 }
