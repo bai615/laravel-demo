@@ -43,3 +43,9 @@ composer.lock
 _ide_helper.php
 _ide_helper_models.php
 .phpstorm.meta.php
+
+/storage/*
+
+/public/js/*
+/public/css/*
+package-lock.json

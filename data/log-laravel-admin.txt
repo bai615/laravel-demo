@@ -1,0 +1,76 @@
+D:\workspace\laravel\blog_5.5>git checkout laravel-admin
+error: Your local changes to the following files would be overwritten by checkout:
+        public/css/app.css
+        public/mix-manifest.json
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\workspace\laravel\blog_5.5>git checkout laravel-admin
+error: Your local changes to the following files would be overwritten by checkout:
+        .gitignore
+        public/css/app.css
+        public/mix-manifest.json
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+D:\workspace\laravel\blog_5.5>git checkout laravel-admin
+Switched to branch 'laravel-admin'
+Your branch is up to date with 'origin/laravel-admin'.
+
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 2 installs, 0 updates, 23 removals
+  - Removing webonyx/graphql-php (v0.10.2)
+  - Removing tymon/jwt-auth (0.5.12)
+  - Removing symfony/polyfill-util (v1.8.0)
+  - Removing symfony/polyfill-php56 (v1.8.0)
+  - Removing spatie/laravel-permission (2.12.2)
+  - Removing spatie/laravel-fractal (5.3.2)
+  - Removing spatie/fractalistic (2.7.1)
+  - Removing phpseclib/phpseclib (2.0.11)
+  - Removing namshi/jose (7.2.3)
+  - Removing maximebf/debugbar (v1.15.0)
+  - Removing league/oauth2-server (6.1.1)
+  - Removing league/fractal (0.17.0)
+  - Removing league/event (2.1.2)
+  - Removing lcobucci/jwt (3.2.2)
+  - Removing laravelcollective/html (v5.5.4)
+  - Removing laravel/passport (v4.0.3)
+  - Removing guzzlehttp/psr7 (1.4.2)
+  - Removing guzzlehttp/promises (v1.3.1)
+  - Removing guzzlehttp/guzzle (6.3.3)
+  - Removing folklore/graphql (v1.1.0)
+  - Removing firebase/php-jwt (v5.0.0)
+  - Removing defuse/php-encryption (v2.2.0)
+  - Removing barryvdh/laravel-debugbar (v3.1.5)
+  - Installing symfony/dom-crawler (v3.4.12): Loading from cache
+  - Installing encore/laravel-admin (v1.5.15): Downloading (100%)
+encore/laravel-admin suggests installing intervention/image (Required to handling and manipulation upload images (~2.3).)
+encore/laravel-admin suggests installing spatie/eloquent-sortable (Required to built orderable gird.)
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: barryvdh/laravel-ide-helper
+Discovered Package: encore/laravel-admin
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Package manifest generated successfully.
+> Illuminate\Foundation\ComposerScripts::postUpdate
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+Tag Exists: @mixin \Eloquent in Illuminate\Database\Eloquent\Model
+Tag Exists: @mixin \Illuminate\Database\Eloquent\Builder in Illuminate\Database\Eloquent\Model
+Tag Exists: @mixin \Illuminate\Database\Query\Builder in Illuminate\Database\Eloquent\Model
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+
+D:\workspace\laravel\blog_5.5>
+
