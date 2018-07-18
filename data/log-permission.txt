@@ -1,0 +1,509 @@
+Microsoft Windows [版本 10.0.17134.165]
+(c) 2018 Microsoft Corporation。保留所有权利。
+
+C:\Users\SNDS>d:
+
+D:\>cd workspace
+
+D:\workspace>cd laravel
+
+D:\workspace\laravel>cd blog_5.5
+
+D:\workspace\laravel\blog_5.5>gitk
+
+D:\workspace\laravel\blog_5.5>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+D:\workspace\laravel\blog_5.5>git checkout permission
+Switched to branch 'permission'
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        storage/debugbar/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\workspace\laravel\blog_5.5>gitk
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        storage/debugbar/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\workspace\laravel\blog_5.5>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\workspace\laravel\blog_5.5>git checkout permission
+Switched to branch 'permission'
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        storage/debugbar/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\workspace\laravel\blog_5.5>git stash list
+
+D:\workspace\laravel\blog_5.5>composer require spatie/laravel-permission
+Using version ^2.12 for spatie/laravel-permission
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 0 installs, 7 updates, 33 removals
+  - Removing zendframework/zend-diactoros (1.8.1)
+  - Removing webonyx/graphql-php (v0.10.2)
+  - Removing tymon/jwt-auth (0.5.12)
+  - Removing symfony/psr-http-message-bridge (v1.0.2)
+  - Removing symfony/polyfill-util (v1.8.0)
+  - Removing symfony/polyfill-php56 (v1.8.0)
+  - Removing symfony/class-loader (v3.4.12)
+  - Removing spatie/laravel-fractal (5.3.2)
+  - Removing spatie/fractalistic (2.7.1)
+  - Removing qiniu/php-sdk (v7.2.6)
+  - Removing psr/http-message (1.0.1)
+  - Removing phpseclib/phpseclib (2.0.11)
+  - Removing namshi/jose (7.2.3)
+  - Removing maximebf/debugbar (v1.15.0)
+  - Removing league/oauth2-server (6.1.1)
+  - Removing league/fractal (0.17.0)
+  - Removing league/event (2.1.2)
+  - Removing lcobucci/jwt (3.2.2)
+  - Removing laravelcollective/html (v5.5.4)
+  - Removing laravel/scout (v4.0.4)
+  - Removing laravel/passport (v4.0.3)
+  - Removing guzzlehttp/psr7 (1.4.2)
+  - Removing guzzlehttp/promises (v1.3.1)
+  - Removing guzzlehttp/guzzle (6.3.3)
+  - Removing folklore/graphql (v1.1.0)
+  - Removing firebase/php-jwt (v5.0.0)
+  - Removing doctrine/event-manager (v1.0.0)
+  - Removing doctrine/dbal (v2.8.0)
+  - Removing doctrine/cache (v1.7.1)
+  - Removing defuse/php-encryption (v2.2.0)
+  - Removing barryvdh/reflection-docblock (v2.0.4)
+  - Removing barryvdh/laravel-ide-helper (v2.4.3)
+  - Removing barryvdh/laravel-debugbar (v3.1.5)
+  - Updating fzaninotto/faker (v1.8.0 => v1.7.1): Loading from cache
+  - Updating phpunit/phpunit-mock-objects (5.0.8 => 5.0.7): Loading from cache
+  - Updating phpunit/phpunit (6.5.9 => 6.5.8): Loading from cache
+  - Updating nesbot/carbon (1.32.0 => 1.31.0): Loading from cache
+  - Updating paragonie/random_compat (v2.0.17 => v2.0.15): Loading from cache
+  - Updating swiftmailer/swiftmailer (v6.1.2 => v6.0.2): Loading from cache
+  - Updating vlucas/phpdotenv (v2.5.0 => v2.4.0): Loading from cache
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: nesbot/carbon
+Discovered Package: spatie/laravel-permission
+Package manifest generated successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+Copied File [\vendor\spatie\laravel-permission\database\migrations\create_permission_tables.php.stub] To [\database\migrations\2018_07_18_025629_create_permission_tables.php]
+Publishing complete.
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   composer.json
+        modified:   composer.lock
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        database/migrations/2018_07_18_025629_create_permission_tables.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        storage/debugbar/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\workspace\laravel\blog_5.5>php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+Copied File [\vendor\spatie\laravel-permission\database\migrations\create_permission_tables.php.stub] To [\database\migrations\2018_07_18_030104_create_permission_tables.php]
+Publishing complete.
+
+D:\workspace\laravel\blog_5.5>git pull
+Already up to date.
+
+D:\workspace\laravel\blog_5.5>gitk
+
+D:\workspace\laravel\blog_5.5>php artisan
+Laravel Framework 5.5.40
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --env[=ENV]       The environment the command should run under
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  clear-compiled                Remove the compiled class file
+  down                          Put the application into maintenance mode
+  env                           Display the current framework environment
+  help                          Displays help for a command
+  inspire                       Display an inspiring quote
+  list                          Lists commands
+  migrate                       Run the database migrations
+  optimize                      Optimize the framework for better performance (deprecated)
+  preset                        Swap the front-end scaffolding for the application
+  serve                         Serve the application on the PHP development server
+  tinker                        Interact with your application
+  up                            Bring the application out of maintenance mode
+ app
+  app:name                      Set the application namespace
+ auth
+  auth:clear-resets             Flush expired password reset tokens
+ cache
+  cache:clear                   Flush the application cache
+  cache:forget                  Remove an item from the cache
+  cache:table                   Create a migration for the cache database table
+ config
+  config:cache                  Create a cache file for faster configuration loading
+  config:clear                  Remove the configuration cache file
+ db
+  db:seed                       Seed the database with records
+ event
+  event:generate                Generate the missing events and listeners based on registration
+ key
+  key:generate                  Set the application key
+ make
+  make:auth                     Scaffold basic login and registration views and routes
+  make:command                  Create a new Artisan command
+  make:controller               Create a new controller class
+  make:event                    Create a new event class
+  make:exception                Create a new custom exception class
+  make:factory                  Create a new model factory
+  make:job                      Create a new job class
+  make:listener                 Create a new event listener class
+  make:mail                     Create a new email class
+  make:middleware               Create a new middleware class
+  make:migration                Create a new migration file
+  make:model                    Create a new Eloquent model class
+  make:notification             Create a new notification class
+  make:policy                   Create a new policy class
+  make:provider                 Create a new service provider class
+  make:request                  Create a new form request class
+  make:resource                 Create a new resource
+  make:rule                     Create a new validation rule
+  make:seeder                   Create a new seeder class
+  make:test                     Create a new test class
+ migrate
+  migrate:fresh                 Drop all tables and re-run all migrations
+  migrate:install               Create the migration repository
+  migrate:refresh               Reset and re-run all migrations
+  migrate:reset                 Rollback all database migrations
+  migrate:rollback              Rollback the last database migration
+  migrate:status                Show the status of each migration
+ notifications
+  notifications:table           Create a migration for the notifications table
+ package
+  package:discover              Rebuild the cached package manifest
+ permission
+  permission:create-permission  Create a permission
+  permission:create-role        Create a role
+ queue
+  queue:failed                  List all of the failed queue jobs
+  queue:failed-table            Create a migration for the failed queue jobs database table
+  queue:flush                   Flush all of the failed queue jobs
+  queue:forget                  Delete a failed queue job
+  queue:listen                  Listen to a given queue
+  queue:restart                 Restart queue worker daemons after their current job
+  queue:retry                   Retry a failed queue job
+  queue:table                   Create a migration for the queue jobs database table
+  queue:work                    Start processing jobs on the queue as a daemon
+ route
+  route:cache                   Create a route cache file for faster route registration
+  route:clear                   Remove the route cache file
+  route:list                    List all registered routes
+ schedule
+  schedule:run                  Run the scheduled commands
+ session
+  session:table                 Create a migration for the session database table
+ storage
+  storage:link                  Create a symbolic link from "public/storage" to "storage/app/public"
+ vendor
+  vendor:publish                Publish any publishable assets from vendor packages
+ view
+  view:clear                    Clear all compiled view files
+
+D:\workspace\laravel\blog_5.5>php artisan migrate
+Migration table created successfully.
+
+In Connection.php line 664:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQ
+  L: alter table `users` add unique `users_email_unique`(`email`))
+
+
+In Connection.php line 458:
+
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes
+
+
+
+D:\workspace\laravel\blog_5.5>php artisan migrate
+
+In AppServiceProvider.php line 23:
+
+  Class 'App\Providers\Schema' not found
+
+
+
+D:\workspace\laravel\blog_5.5>php artisan migrate
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table
+Migrating: 2018_07_18_030104_create_permission_tables
+Migrated:  2018_07_18_030104_create_permission_tables
+
+D:\workspace\laravel\blog_5.5>php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
+Copied File [\vendor\spatie\laravel-permission\config\permission.php] To [\config\permission.php]
+Publishing complete.
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   composer.json
+        modified:   composer.lock
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        config/permission.php
+        database/migrations/2018_07_18_030104_create_permission_tables.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        storage/debugbar/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\workspace\laravel\blog_5.5>composer require laravelcollective/html
+Using version ^5.6 for laravelcollective/html
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+^CTerminate batch job (Y/N)? ^C
+^C
+D:\workspace\laravel\blog_5.5>
+
+D:\workspace\laravel\blog_5.5>composer require laravelcollective/html 5.5.*
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing laravelcollective/html (v5.5.4): Loading from cache
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/tinker
+Discovered Package: laravelcollective/html
+Discovered Package: nesbot/carbon
+Discovered Package: spatie/laravel-permission
+Package manifest generated successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:auth
+Authentication scaffolding generated successfully.
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   app/User.php
+        modified:   composer.json
+        modified:   composer.lock
+        modified:   routes/web.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .phpstorm.meta.php
+        _ide_helper.php
+        _ide_helper_models.php
+        app/Http/Controllers/HomeController.php
+        config/permission.php
+        database/migrations/2018_07_18_030104_create_permission_tables.php
+        package-lock.json
+        public/js/admin.js
+        public/js/all.js
+        public/js/dashboard.js
+        public/js/manifest.js
+        public/js/vendor.js
+        resources/views/auth/
+        resources/views/home.blade.php
+        resources/views/layouts/
+        storage/debugbar/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   .gitignore
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   app/User.php
+        modified:   composer.json
+        modified:   composer.lock
+        modified:   routes/web.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        app/Http/Controllers/HomeController.php
+        config/permission.php
+        database/migrations/2018_07_18_030104_create_permission_tables.php
+        resources/views/auth/
+        resources/views/home.blade.php
+        resources/views/layouts/
+        storage/debugbar/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\workspace\laravel\blog_5.5>git status
+On branch permission
+Your branch is up to date with 'origin/permission'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   .gitignore
+        modified:   app/Providers/AppServiceProvider.php
+        modified:   app/User.php
+        modified:   composer.json
+        modified:   composer.lock
+        modified:   routes/web.php
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        app/Http/Controllers/HomeController.php
+        config/permission.php
+        database/migrations/2018_07_18_030104_create_permission_tables.php
+        resources/views/auth/
+        resources/views/home.blade.php
+        resources/views/layouts/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\workspace\laravel\blog_5.5>php artisan make:model Post -m
+Model created successfully.
+Created Migration: 2018_07_18_031754_create_posts_table
+
+D:\workspace\laravel\blog_5.5>php artisan migrate
+Migrating: 2018_07_18_031754_create_posts_table
+Migrated:  2018_07_18_031754_create_posts_table
+
+D:\workspace\laravel\blog_5.5>php artisan make:controller PostController --resource
+Controller created successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:controller UserController --resource
+Controller created successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:controller PermissionController --resource
+Controller created successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:controller RoleController --resource
+Controller created successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:middleware AdminMiddleware
+Middleware created successfully.
+
+D:\workspace\laravel\blog_5.5>php artisan make:middleware ClearanceMiddleware
+Middleware created successfully.
+
+D:\workspace\laravel\blog_5.5>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\workspace\laravel\blog_5.5>

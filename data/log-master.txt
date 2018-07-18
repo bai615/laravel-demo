@@ -1,0 +1,100 @@
+D:\workspace\laravel\blog_5.5>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>
+D:\workspace\laravel\blog_5.5>composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 31 installs, 8 updates, 0 removals
+  - Updating fzaninotto/faker (v1.7.1 => v1.8.0): Loading from cache
+  - Updating phpunit/phpunit-mock-objects (5.0.7 => 5.0.8): Loading from cache
+  - Updating phpunit/phpunit (6.5.8 => 6.5.9): Loading from cache
+  - Updating swiftmailer/swiftmailer (v6.0.2 => v6.1.2): Loading from cache
+  - Updating vlucas/phpdotenv (v2.4.0 => v2.5.0): Loading from cache
+  - Updating nikic/php-parser (v4.0.2 => v4.0.3): Downloading (100%)
+  - Installing webonyx/graphql-php (v0.10.2): Loading from cache
+  - Updating paragonie/random_compat (v2.0.15 => v2.0.17): Loading from cache
+  - Updating nesbot/carbon (1.31.0 => 1.32.0): Loading from cache
+  - Installing folklore/graphql (v1.1.0): Loading from cache
+  - Installing symfony/polyfill-util (v1.8.0): Loading from cache
+  - Installing symfony/polyfill-php56 (v1.8.0): Loading from cache
+  - Installing namshi/jose (7.2.3): Loading from cache
+  - Installing tymon/jwt-auth (0.5.12): Loading from cache
+  - Installing maximebf/debugbar (v1.15.0): Loading from cache
+  - Installing barryvdh/laravel-debugbar (v3.1.5): Loading from cache
+  - Installing psr/http-message (1.0.1): Loading from cache
+  - Installing zendframework/zend-diactoros (1.8.1): Loading from cache
+  - Installing symfony/psr-http-message-bridge (v1.0.2): Loading from cache
+  - Installing phpseclib/phpseclib (2.0.11): Loading from cache
+  - Installing defuse/php-encryption (v2.2.0): Loading from cache
+  - Installing lcobucci/jwt (3.2.2): Loading from cache
+  - Installing league/event (2.1.2): Loading from cache
+  - Installing league/oauth2-server (6.1.1): Loading from cache
+  - Installing guzzlehttp/promises (v1.3.1): Loading from cache
+  - Installing guzzlehttp/psr7 (1.4.2): Loading from cache
+  - Installing guzzlehttp/guzzle (6.3.3): Loading from cache
+  - Installing firebase/php-jwt (v5.0.0): Loading from cache
+  - Installing laravel/passport (v4.0.3): Loading from cache
+  - Installing qiniu/php-sdk (v7.2.6): Loading from cache
+  - Installing league/fractal (0.17.0): Loading from cache
+  - Installing spatie/fractalistic (2.7.1): Loading from cache
+  - Installing spatie/laravel-fractal (5.3.2): Loading from cache
+  - Installing symfony/class-loader (v3.4.12): Loading from cache
+  - Installing barryvdh/reflection-docblock (v2.0.4): Loading from cache
+  - Installing barryvdh/laravel-ide-helper (v2.4.3): Loading from cache
+  - Installing doctrine/event-manager (v1.0.0): Loading from cache
+  - Installing doctrine/cache (v1.7.1): Loading from cache
+  - Installing doctrine/dbal (v2.8.0): Loading from cache
+webonyx/graphql-php suggests installing react/promise (To leverage async resolving on React PHP platform)
+maximebf/debugbar suggests installing kriswallsmith/assetic (The best way to manage assets)
+maximebf/debugbar suggests installing predis/predis (Redis storage)
+phpseclib/phpseclib suggests installing ext-libsodium (SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.)
+phpseclib/phpseclib suggests installing ext-mcrypt (Install the Mcrypt extension in order to speed up a few other cryptographic operations.)
+phpseclib/phpseclib suggests installing ext-gmp (Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.)
+lcobucci/jwt suggests installing mdanter/ecc (Required to use Elliptic Curves based algorithms.)
+league/fractal suggests installing pagerfanta/pagerfanta (Pagerfanta Paginator)
+league/fractal suggests installing zendframework/zend-paginator (Zend Framework Paginator)
+symfony/class-loader suggests installing symfony/polyfill-apcu (For using ApcClassLoader on HHVM)
+barryvdh/reflection-docblock suggests installing dflydev/markdown (~1.0)
+doctrine/cache suggests installing alcaeus/mongo-php-adapter (Required to use legacy MongoDB driver)
+Writing lock file
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover
+Discovered Package: barryvdh/laravel-debugbar
+Discovered Package: barryvdh/laravel-ide-helper
+Discovered Package: fideloper/proxy
+Discovered Package: folklore/graphql
+Discovered Package: laravel/passport
+Discovered Package: laravel/tinker
+Discovered Package: laravelcollective/html
+Discovered Package: nesbot/carbon
+Discovered Package: spatie/laravel-fractal
+Discovered Package: spatie/laravel-permission
+Package manifest generated successfully.
+
+What about running composer thanks now?
+This will spread some love by sending a star to the GitHub repositories of your fellow package maintainers.
+
+> Illuminate\Foundation\ComposerScripts::postUpdate
+> php artisan ide-helper:generate
+A new helper file was written to _ide_helper.php
+Tag Exists: @mixin \Eloquent in Illuminate\Database\Eloquent\Model
+Tag Exists: @mixin \Illuminate\Database\Eloquent\Builder in Illuminate\Database\Eloquent\Model
+Tag Exists: @mixin \Illuminate\Database\Query\Builder in Illuminate\Database\Eloquent\Model
+> php artisan ide-helper:meta
+A new meta file was written to .phpstorm.meta.php
+
+D:\workspace\laravel\blog_5.5>
+
+
+
+
+
+
+
+
+
+
