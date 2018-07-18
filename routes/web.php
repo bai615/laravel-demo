@@ -18,3 +18,16 @@ Route::get('/', function () {
 Route::get('hello',function (){
     return 'Hello, welcome to LaravelAcademy.org';
 });
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'PostController@index')->name('home');
+Route::resource('posts', 'PostController');
+
+Route::resource('users', 'UserController');
+
+Route::resource('permissions', 'PermissionController');
+
+Route::resource('roles', 'RoleController');
