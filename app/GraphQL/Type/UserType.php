@@ -10,7 +10,7 @@ class UserType extends BaseType
 {
     protected $attributes = [
         'name' => 'User',
-        'description' => 'A User type'
+        'description' => 'A User'
     ];
 
     public function fields()
@@ -18,7 +18,7 @@ class UserType extends BaseType
         return [
             'id' => [
                 'type' => Type::nonNull(Type::string()),
-                'description' => 'The email of the user'
+                'description' => 'The id of the user'
             ],
             'email' => [
                 'type' => Type::string(),

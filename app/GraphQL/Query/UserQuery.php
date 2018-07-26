@@ -17,7 +17,7 @@ class UserQuery extends Query
 
     public function type()
     {
-        return Type::listOf(Type::string());
+        return Type::listOf(GraphQL::type('User'));
     }
 
     public function args()
