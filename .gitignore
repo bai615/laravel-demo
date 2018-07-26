@@ -49,3 +49,5 @@ package-lock.json
 /public/js/*
 public/css/app.css
 public/mix-manifest.json
+
+graphql-blog-app/node_modules/*
