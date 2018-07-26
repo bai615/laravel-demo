@@ -8,7 +8,7 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use GraphQL;
 use Tymon\JWTAuth\Facades\JWTAuth;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginMutation extends Mutation
 {
