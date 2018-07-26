@@ -64,7 +64,9 @@ return [
      * Any middleware for a specific 'graphql' schema
      */
     'middleware_schema' => [
-        'default' => [],
+        'default' => [
+            \Barryvdh\Cors\HandleCors::class,
+        ],
     ],
 
     /*
