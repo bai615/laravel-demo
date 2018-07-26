@@ -30,6 +30,8 @@ class UserQuery extends Query
 
     public function resolve($root, $args, $context, ResolveInfo $info)
     {
+        $fields = $info->getFieldSelection($depth = 3);
+
         if (isset($args['id'])) {
             return User::where('id', $args['id'])->get();
         } elseif (isset($args['email'])) {
@@ -37,5 +39,13 @@ class UserQuery extends Query
         } else {
             return User::all();
         }
+
+        foreach ($fields as $field => $keys) {
+            if ($field === 'comments') {
+                $users->with('comments');
+            }
+        }
+
+        return $users->get();
     }
 }
