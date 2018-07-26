@@ -183,6 +183,7 @@ return [
      */
     'types' => [
         'User' => \App\GraphQL\Type\UserType::class,
+        'Comment' => \App\GraphQL\Type\CommentType::class,
     ],
 
     /*
