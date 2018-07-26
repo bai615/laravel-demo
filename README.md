@@ -35,7 +35,7 @@ DB_PASSWORD=password
 
 4、更新数据库
 
-php artisan serve
+php artisan migrate
 
 5、调整 config/database.php 中数据库信息 (此处可以不用修改)
 
