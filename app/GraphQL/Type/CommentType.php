@@ -23,6 +23,10 @@ class CommentType extends BaseType
             'content' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'The content of the comment'
+            ],
+            'status' => [
+                'type' => GraphQL::type('CommentStatusEnum'),
+                'description' => 'The status of the comment'
             ]
         ];
     }
