@@ -2,6 +2,7 @@
 基于 Laravel + Vue + GraphQL 实现前后端分离的博客应用
 
 http://laravelacademy.org/post/9283.html
+http://laravelacademy.org/post/9298.html
 
 npm install -g vue  // 已全局安装过 vue 略过此步骤
 vue init webpack graphql-blog-app
