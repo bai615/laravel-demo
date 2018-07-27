@@ -33,6 +33,10 @@ class UserType extends BaseType
                 'type' => Type::string(),
                 'description' => 'The email of the user'
             ],
+            'posts' => [
+                'type' => Type::listOf(GraphQL::type('Article')),
+                'description' => 'The articles by the user'
+            ],
             'comments' => [
                 'type' => Type::listOf(GraphQL::type('Comment')),
                 'description' => 'The comments by the user'
@@ -44,6 +48,15 @@ class UserType extends BaseType
     protected function resolveEmailField($root, $args)
     {
         return strtolower($root->email);
+    }
+
+    protected function resolvePostsField($root, $args)
+    {
+        if (isset($args['id'])) {
+            return $root->posts->where('id', $args['id']);
+        }
+
+        return $root->posts;
     }
 
     protected function resolveCommentsField($root, $args)

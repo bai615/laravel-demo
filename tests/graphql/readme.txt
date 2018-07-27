@@ -114,3 +114,19 @@ query AllUserQuery{
     email
   }
 }
+
+
+10、
+query QueryUserById($id: String){
+  user(id: $id){
+    id
+    name
+    email
+    posts{
+      id
+      title
+    }
+  }
+}
+
+{"id": "30"}

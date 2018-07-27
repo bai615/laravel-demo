@@ -128,6 +128,7 @@ return [
             'query' => [
                 'users' => App\GraphQL\Query\UserQuery::class,
                 'allUsers' => \App\GraphQL\Query\UserQuery::class,
+                'user' => \App\GraphQL\Query\UserQueryById::class,
             ],
             'mutation' => [
                 'updateUserPassword' => \App\GraphQL\Mutation\UpdateUserPasswordMutation::class,
@@ -190,6 +191,7 @@ return [
         'User' => \App\GraphQL\Type\UserType::class,
         'Comment' => \App\GraphQL\Type\CommentType::class,
         'CommentStatusEnum' => \App\GraphQL\Enums\CommentStatusEnum::class,
+        'Article' => \App\GraphQL\Type\ArticleType::class,
     ],
 
     /*
