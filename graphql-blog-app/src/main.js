@@ -9,6 +9,7 @@ import {ApolloClient} from 'apollo-client'
 import {HttpLink} from 'apollo-link-http'
 import {InMemoryCache} from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
+import { setContext } from 'apollo-link-context'
 
 Vue.config.productionTip = false
 
@@ -21,9 +22,30 @@ const httpLink = new HttpLink({
   uri: 'http://demo.laravelblog.com/graphql'
 })
 
+const authLink = setContext((_, { headers }) => {
+  // 从 LocalStorage 中获取认证 token（如果存在的话）
+  const token = localStorage.getItem('blog-app-token')
+
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : null
+    }
+  }
+})
+
 // 创建 apollo client
+/*
 const apolloClient = new ApolloClient({
-  link: httpLink,
+    link: httpLink,
+    cache: new InMemoryCache()
+})
+*/
+
+// 更新 apollo client 如下
+const apolloClient = new ApolloClient({
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache()
 })
 
