@@ -28,6 +28,15 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
+//        print_r($credentials);
+        /**
+         * 认证信息格式
+         * Array
+        (
+            [email] => auth01@test.com
+            [password] => 1234567890
+        )
+         */
         if (!$token = JWTAuth::attempt($credentials)) {
             return response([
                 'status' => 'error',

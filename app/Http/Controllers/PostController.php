@@ -23,6 +23,20 @@ class PostController extends Controller
         // GET http://127.0.0.1:8000/posts
 //        echo 'posts-index';
 
+        ////////////////////////////////////////////////////////////////////
+        /*
+        // JWTAuth 认证测试
+        $credentials = [
+            'email' => "auth01@test.com",
+            'password' => "1234567890"
+        ];
+        $token = \Tymon\JWTAuth\Facades\JWTAuth::attempt($credentials);
+        var_dump($token);exit;
+        // 输出值：
+        // 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQsImlzcyI6Imh0dHA6Ly9kZW1vLmxhcmF2ZWxibG9nLmNvbSIsImlhdCI6MTUzMjY1ODAzNSwiZXhwIjoxNTMyNjYxNjM1LCJuYmYiOjE1MzI2NTgwMzUsImp0aSI6InJhbkw0RDVvZEc5OU9xcXoifQ.D-wyCZCqncLrqEbPkJ2iGK4pqxGIYcyBkC27kQqUpo8' (length=243)
+        */
+        ///////////////////////////////////////////////////////////////////
+
         $posts = Post::orderby('id', 'desc')->paginate(5); //show only 5 items at a time in descending order
 
         return view('posts.index', compact('posts'));
