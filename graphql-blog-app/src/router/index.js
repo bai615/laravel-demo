@@ -8,6 +8,7 @@ import UserDetail from '@/components/Admin/UserDetail'
 import AddPost from '@/components/Admin/AddPost'
 import Posts from '@/components/Admin/Posts'
 import Home from '@/components/Home'
+import PostDetail from '@/components/PostDetail'
 
 Vue.use(Router)
 
@@ -53,6 +54,12 @@ export default new Router({
       path: '/admin/posts',
       name: 'Posts',
       component: Posts
+    },
+    {
+      path: '/posts/:id',
+      name: 'PostDetail',
+      component: PostDetail,
+      props: true
     }
   ]
 })

@@ -80,3 +80,18 @@ export const ALL_POSTS_QUERY = gql`
         }
     }
 `
+
+export const POST_QUERY = gql`
+    query PostQuery($id: String!) {
+        post(id: $id) {
+            id
+            title
+            content
+            user {
+                id
+                name
+                email
+            }
+        }
+    }
+`
