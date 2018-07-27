@@ -67,7 +67,7 @@ php artisan serve
 [命令集](command.md) 
 
 
-##开启vue模板方式：
+## 开启vue模板方式：
 
 将 resources/assets/js/app.js 给为 app.bak.js
 
