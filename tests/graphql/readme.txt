@@ -104,3 +104,13 @@ mutation LoginMutation{
 	"__typename":"User"
     }
 }}
+
+
+9、
+query AllUserQuery{
+  users{
+    id
+    name
+    email
+  }
+}

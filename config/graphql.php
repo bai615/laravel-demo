@@ -127,6 +127,7 @@ return [
         'default' => [
             'query' => [
                 'users' => App\GraphQL\Query\UserQuery::class,
+                'allUsers' => \App\GraphQL\Query\UserQuery::class,
             ],
             'mutation' => [
                 'updateUserPassword' => \App\GraphQL\Mutation\UpdateUserPasswordMutation::class,
