@@ -6,6 +6,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+//use Illuminate\Support\Facades\Log;
 
 class User extends Authenticatable
 {
@@ -56,7 +57,9 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($password)
     {
+//        Log::error('password:'.$password);
         $this->attributes['password'] = bcrypt($password);
+//        Log::error('a-password:'.$this->attributes['password']);
     }
 
     public function comments()

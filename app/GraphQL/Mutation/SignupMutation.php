@@ -43,7 +43,8 @@ class SignupMutation extends Mutation
         $user = new User();
         $user->name = $args['name'];
         $user->email = $args['email'];
-        $user->password = bcrypt($args['password']);
+//        $user->password = bcrypt($args['password']);
+        $user->password = $args['password'];
         $user->save();
         return $user;
     }
