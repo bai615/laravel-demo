@@ -142,3 +142,16 @@ query QueryArticles{
     }
   }
 }
+
+
+12、
+query ArticleQueryById($id: String){
+  post(id: $id){
+    id
+    title
+    content
+    user{
+      name
+    }
+  }
+}
