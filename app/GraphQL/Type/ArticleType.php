@@ -27,6 +27,10 @@ class ArticleType extends BaseType
             'content' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'The body of the article'
+            ],
+            'user' => [
+                'type' => GraphQL::type('User'),
+                'description' => 'The author of the article'
             ]
         ];
     }
@@ -34,5 +38,13 @@ class ArticleType extends BaseType
     protected function resolveContentField($root, $args)
     {
         return $root->body;
+    }
+
+    protected function resolveUserField($root, $args)
+    {
+        if (isset($args['id'])) {
+            return $root->author->where('id', $args['id']);
+        }
+        return $root->author;
     }
 }

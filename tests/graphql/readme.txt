@@ -130,3 +130,15 @@ query QueryUserById($id: String){
 }
 
 {"id": "30"}
+
+
+11、
+query QueryArticles{
+  allPosts{
+    id
+    title
+    user{
+      name
+    }
+  }
+}

@@ -129,12 +129,14 @@ return [
                 'users' => App\GraphQL\Query\UserQuery::class,
                 'allUsers' => \App\GraphQL\Query\UserQuery::class,
                 'user' => \App\GraphQL\Query\UserQueryById::class,
+                'allPosts' => \App\GraphQL\Query\ArticleQuery::class,
             ],
             'mutation' => [
                 'updateUserPassword' => \App\GraphQL\Mutation\UpdateUserPasswordMutation::class,
                 'updateUserEmail' => \App\GraphQL\Mutation\UpdateUserEmailMutation::class,
                 'createUser' => \App\GraphQL\Mutation\SignupMutation::class,
                 'login' => \App\GraphQL\Mutation\LoginMutation::class,
+                'addPost' => \App\GraphQL\Mutation\AddPostMutation::class,
             ]
         ]
     ],
