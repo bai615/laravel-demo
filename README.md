@@ -67,6 +67,25 @@ php artisan serve
 [命令集](command.md) 
 
 
+##开启vue模板方式：
+
+将 resources/assets/js/app.js 给为 app.bak.js
+
+将 resources/assets/js/app-bak.js 给为 app.js
+
+将 resources/views/layouts/app.blade-bak.php 给为 app.blade.php
+
+将 resources/views/layouts/app.blade.php 给为 app.blade.bak.php
+
+将 routes/web.php 中，以下代码注释去掉
+```
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+```
+在项目根目录下，执行 npm run dev 
+
+然后 URL 浏览，即为 vue 模板方式
 
 ## 问题记录
 
