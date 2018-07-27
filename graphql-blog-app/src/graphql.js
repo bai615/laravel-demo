@@ -37,3 +37,16 @@ export const ALL_USERS_QUERY = gql`
         }
     }
 `
+
+export const USER_QUERY = gql`
+    query UserQueryById($id: String) {
+        user(id: $id) {
+            id
+            name
+            email
+            posts {
+                id
+            }
+        }
+    }
+`
