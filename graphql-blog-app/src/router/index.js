@@ -5,6 +5,9 @@ import SignUp from '@/components/Admin/SignUp'
 import LogIn from '@/components/Admin/LogIn'
 import Users from '@/components/Admin/Users'
 import UserDetail from '@/components/Admin/UserDetail'
+import AddPost from '@/components/Admin/AddPost'
+import Posts from '@/components/Admin/Posts'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
@@ -12,6 +15,11 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/hello',
       name: 'HelloWorld',
       component: HelloWorld
     },
@@ -35,6 +43,16 @@ export default new Router({
       name: 'UserDetail',
       component: UserDetail,
       props: true
+    },
+    {
+      path: '/admin/posts/new',
+      name: 'AddPost',
+      component: AddPost
+    },
+    {
+      path: '/admin/posts',
+      name: 'Posts',
+      component: Posts
     }
   ]
 })

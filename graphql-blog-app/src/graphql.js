@@ -50,3 +50,33 @@ export const USER_QUERY = gql`
         }
     }
 `
+
+export const ADD_POST_MUTATION = gql`
+    mutation AddPostMutation($title: String!, $content: String!) {
+        addPost(
+            title: $title,
+            content: $content
+        ) {
+            id
+            title
+            content
+            user {
+                id
+                name
+                email
+            }
+        }
+    }
+`
+
+export const ALL_POSTS_QUERY = gql`
+    query AllPostsQuery {
+        allPosts {
+            id
+            title
+            user {
+                name
+            }
+        }
+    }
+`
