@@ -15,6 +15,33 @@ use Illuminate\Http\Request;
 
 //use Psr\Http\Message\ServerRequestInterface;
 
+
+// usage inside a laravel route
+Route::get('/image', function()
+{
+    /*
+    $mangager = new \Intervention\Image\ImageManager();
+
+    $image = $mangager->make('foo.jpg')->resize(300,200);
+
+    $image->text('123', 50, 100, function ($font) {
+        $font->file(realpath('./fonts/msyh.ttc'));
+        $font->size(32);
+        $font->color('#212121');
+        $font->align('cneter');
+        $font->valign('top');
+    });
+
+    $image->save('./ok.jpg');
+
+    return 'ok';
+    */
+
+    $img = Image::make('foo.jpg')->resize(300, 200);
+    return $img->response('jpg');
+});
+
+
 /*
 Route::get('/', function (Request $request) {
 //    var_dump(storage_path('app/photo/test.jpg')); //D:\workspace\laravel\blog_5.5\storage\app/photo/test.jpg
