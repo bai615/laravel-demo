@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -92,6 +94,8 @@
             </div>
         </div>
 
+        @include('flash::message')
+
         @yield('content')
 
         <example-component></example-component>
@@ -102,5 +106,13 @@
     <script src="{{ asset('js/manifest.js') }}"></script>
     <script src="{{ asset('js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- If using flash()->important() or flash()->overlay(), you'll need to pull in the JS for Twitter Bootstrap. -->
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        $('#flash-overlay-modal').modal();
+    </script>
 </body>
 </html>
