@@ -23,9 +23,9 @@ class PostController extends Controller
 //        flash('Welcome Aboard!');
 //        flash('Message')->success();
 //        flash('Message')->overlay();
-        flash('Message')->important();
-        flash()->overlay('Modal Message', 'Modal Title');
-        flash('Message')->error()->important();
+//        flash('Message')->important();
+//        flash()->overlay('Modal Message', 'Modal Title');
+//        flash('Message')->error()->important();
         // GET http://127.0.0.1:8000/posts
 //        echo 'posts-index';
 
