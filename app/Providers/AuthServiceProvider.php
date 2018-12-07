@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Foundation\Auth\RyanEloquentUserProvider;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -32,5 +33,10 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(now()->addDays(15));
 
         Passport::refreshTokensExpireIn(now()->addDays(30));
+
+        \Auth::provider('ryan-eloquent', function ($app, $config) {
+            return new RyanEloquentUserProvider($this->app['hash'], $config['model']);
+        });
+
     }
 }

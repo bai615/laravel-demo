@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 //use Psr\Http\Message\ServerRequestInterface;
 
+Route::get('/test','TestController@index');
 
 // usage inside a laravel route
 Route::get('/image', function()
@@ -80,6 +81,7 @@ Route::get('/user', function () {
 //});
 
 Route::get('/','PostController@index')->name('home');
+Route::get('/home','PostController@index');
 
 Route::resource('posts', 'PostController');
 
@@ -166,6 +168,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'Admin\LoginController@login');
     Route::post('logout', 'Admin\LoginController@logout');
+});
+
+Route::group(['prefix' => 'member'], function(){
+
+    Route::get('/', 'Member\IndexController@index');
+
+    Route::get('login', 'Member\LoginController@showLoginForm')->name('member.login');
+    Route::post('login', 'Member\LoginController@login');
 });
 
 //Route::get('/auth/callback', function (\Illuminate\Http\Request $request){
